@@ -1,30 +1,34 @@
 html {
   box-sizing: border-box;
-  font-family: 'Spectral', serif;
+  font-family: "Spectral", serif;
 }
 h1 {
   text-align: center;
 }
-ul {
-  list-style: none;
-  padding: 0;
-}
 li {
-  max-width: 800px;
+  max-width: 750px;
   margin: 0 auto;
 }
-h3 {
-  margin: 0;
+ul {
+  list-style: none;
+  padding: 5px;
 }
 input {
   display: inline;
 }
+h3 {
+  margin: 0;
+}
+.new-description {
+  height: 100px;
+}
+
 .new-item-input {
   width: 100%;
 }
 .bookmark-element {
-  margin-top: 40px;
-  border: solid 1px black;
+  margin-top: 60px;
+  border: solid 1px darkgray;
   border-radius: 5px;
 }
 .star-ratings {
@@ -45,16 +49,19 @@ input {
   text-decoration: none;
 }
 .btn-delete {
-  height: 30px;
-  width: 30px;
+  height: 40px;
+  width: 40px;
   border-radius: 10%;
   float: right;
+}
+legend {
+  font-size: 0;
 }
 button:hover, input[type=radio]:hover {
   cursor: pointer;
 }
 .bookmark-title {
-  background-color: lightgray;
+  background-color: lightblue;
   padding: 5px 20px;
 }
 .bookmark-title-clickable {
@@ -77,9 +84,7 @@ fieldset {
   padding: 0;
   border: none;
 }
-legend {
-  font-size: 0;
-}
+
 .new-bookmark {
   border: solid 1px black;
   border-radius: 5px;
@@ -89,9 +94,7 @@ legend {
   padding: 5px;
   margin: 20px;
 }
-.new-description {
-  height: 100px;
-}
+
 .error-message {
   background-color: lightpink;
   display: block;

@@ -1,48 +1,43 @@
 'use strict';
+/* global $ */
 // eslint-disable-next-line no-unused-vars
-/* global $, api */
+
 
 const api = (function() {
-  const BASE_URL = 'https://thinkful-list-api.herokuapp.com/Jeff'; 
-  
-  const getBookmark = function(callback) {
+  const BASE_URL = 'https://thinkful-list-api.herokuapp.com/Jeff/bookmarks';
+
+  const getBookmarks = function(onSuccess) {
     $.ajax({
-      url: BASE_URL + '/bookmarks',
+      url: BASE_URL,
       method: 'GET',
       contentType: 'application/json',
-      success: callback
+      success: onSuccess
     });
   };
 
-  const deleteBookmark = function(id, callback) {
+  const createBookmark = function(newBookmark, onSuccess, onError) {
     $.ajax({
-      url: `${BASE_URL}/bookmarks/${id}`,
-      method: 'DELETE',
-      contentType: 'application/json',
-      success: callback
-    });
-  };
-
-  const makeNewBookmark = function(item, callback, ifError) {
-    const newTitle = JSON.stringify({
-      item,
-    });
-    $.ajax({
-      url: BASE_URL + '/bookmarks',
+      url: BASE_URL,
       method: 'POST',
       contentType: 'application/json',
-      data: newTitle,
-      success: callback,
-      error: ifError
+      data: newBookmark,
+      success: onSuccess,
+      error: onError
     });
   };
 
-  return {
-    getBookmark,
-    deleteBookmark,
-    makeNewBookmark,
+  const deleteBookmark = function(id, onSuccess) {
+    $.ajax({
+      url: `${BASE_URL}/${id}`,
+      method: 'DELETE',
+      contentType: 'application/json',
+      success: onSuccess
+    });
+  };
+
+ return {
+    getBookmarks,
+    createBookmark,
+    deleteBookmark
   };
 }());
-  
-
-

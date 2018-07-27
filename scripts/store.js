@@ -3,44 +3,42 @@
 
 const store = (function() {
 
-  const removeBookmark = function(id) {
-    this.bookmarks = this.bookmarks.filter(function(bookmark) {
-      bookmark.id !== id;
-    });
-  };
-
-  const toggleExpanded = function(id) {
-    const item = this.bookmarks.find(function(bookmark) {
-      bookmark.id === id;
-    });
-    item.expanded = !item.expanded;
-  };
-
   const addBookmark = function(bookmark) {
     this.bookmarks.push(bookmark);
   };
 
-  const setError = function(errorMessage) {
-    this.error = errorMessage;
+  const findAndDelete = function(id) {
+    this.bookmarks = this.bookmarks.filter(bookmark => bookmark.id !== id);
   };
 
-  const setFilter = function(number) {
-    this.filter = number;
+  const toggleBookmarkExpanded = function(id) {
+    const bookmark = this.bookmarks.filter(bookmark => bookmark.id === id);
+    bookmark[0].expanded = !bookmark[0].expanded;
   };
   
+  const toggleAdding = function() {
+    this.adding = !this.adding;
+  };
+
+  const setFilter = function(num) {
+    this.filter = num;
+  };
+
+  const setError = function(message) {
+    this.error = message;
+  };
+
   return {
     bookmarks: [],
-    adding: false,
-    error: null,
+    adding: true,
     filter: 0,
+    error: null,
+
     addBookmark,
+    findAndDelete,
+    toggleBookmarkExpanded,
+    toggleAdding,
     setFilter,
-    toggleExpanded,
-    removeBookmark,
-    setError,
+    setError
   };
 }());
-
-
-
-

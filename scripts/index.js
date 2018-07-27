@@ -1,17 +1,12 @@
 'use strict';
-// eslint-disable-next-line no-unused-vars
-/* global $, myList, store, api */
+/* global $, bookmarkList */
 
 $(function() {
-  myList.bindEventListeners();
-  myList.render();
+  bookmarkList.bindEventListeners();
+  bookmarkList.render();
 
-  api.getBookmark((bookmarks) => {
-    bookmarks.forEach((bookmark) => { 
-      store.addBookmark(bookmark);
-    });
-    myList.render();
+  api.getBookmarks((bookmarks) => {
+    bookmarks.forEach((bookmark) => store.addBookmark(bookmark));
+    bookmarkList.render();
   });
 });
-
-
