@@ -10,10 +10,10 @@ const store = (function() {
   };
 
   const toggleExpanded = function(id) {
-    const item = this.bookmarks.filter(function(bookmark) {
+    const item = this.bookmarks.find(function(bookmark) {
       bookmark.id === id;
     });
-    item[0].expanded = !item[0].expanded;
+    item.expanded = !item.expanded;
   };
 
   const addBookmark = function(bookmark) {
@@ -33,7 +33,6 @@ const store = (function() {
     adding: false,
     error: null,
     filter: 0,
-    expanded: false,
     addBookmark,
     setFilter,
     toggleExpanded,
