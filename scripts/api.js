@@ -35,7 +35,7 @@ const api = (function() {
     });
   };
 
- return {
+  return {
     getBookmarks,
     createBookmark,
     deleteBookmark

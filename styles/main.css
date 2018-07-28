@@ -43,7 +43,7 @@ h3 {
 .btn {
   display: inline-block;
   color: inherit;
-  background-color: lightgray;
+  background-color: white;
   border: solid 1px darkgray;
   padding: 2px 5px;
   text-decoration: none;
@@ -69,11 +69,11 @@ button:hover, input[type=radio]:hover {
   color: inherit;
 }
 .bookmark-props {
-  background-color: lavender;
+  background-color: lightcoral;
   padding: 5px;
 }
 .bookmark-details {
-  background-color: lightcyan;
+  background-color: white;
   padding: 20px;
 }
 .hidden {
@@ -91,12 +91,12 @@ fieldset {
   padding: 20px;
 }
 .create-bookmark, .filter-bookmarks {
-  padding: 5px;
+  padding: 10px;
   margin: 20px;
 }
 
 .error-message {
-  background-color: lightpink;
+  background-color: lightseagreen;
   display: block;
   padding: 20px 20px;
   position: relative;

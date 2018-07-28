@@ -24,7 +24,7 @@ const bookmarkList = (function() {
         </div>
       `;
     };
-  const generateForm = function() {
+    const generateForm = function() {
       const hiddenIfNotAdding = (store.adding) ? 'hidden' : '';
       
       const generateError = function() {
@@ -114,20 +114,20 @@ const bookmarkList = (function() {
 
     const generateRating = function(item) {
       switch (item.rating) {
-        case 5:
-          return '5star';
-        case 4:
-          return '4star';
-        case 3:
-          return '3star';
-        case 2:
-          return '2star';
-        case 1:
-          return '1star';
-        default:
-          return 'no-star';
-        }
+      case 5:
+        return '5star';
+      case 4:
+        return '4star';
+      case 3:
+        return '3star';
+      case 2:
+        return '2star';
+      case 1:
+        return '1star';
+      default:
+        return 'no-star';
       }
+    }
       
 
     const generateBookmarkStr = function(bookmark) {
@@ -185,7 +185,7 @@ const bookmarkList = (function() {
     $('.main-section').on('submit', '#new-bookmark', function(event) {
       event.preventDefault();
       
-  const newBookmark = $(event.target).serializeJSON();
+      const newBookmark = $(event.target).serializeJSON();
       $('#new-bookmark')[0].reset();
 
       const onSuccess = function(returnedBookmark) {
@@ -272,7 +272,7 @@ const bookmarkList = (function() {
     handleAddClicked();
     handleCancel();
     handleFilter();
-};
+  };
 
   return {
     render, bindEventListeners
